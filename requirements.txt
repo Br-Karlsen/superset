@@ -1,2 +1,4 @@
 apache-superset
+pandas-gbq
 psycopg2
+pybigquery

@@ -1,7 +1,7 @@
-FROM apache/superset:71e3fa1bf350045da9a1c1e89443549c204a3516
+# FROM apache/superset:71e3fa1bf350045da9a1c1e89443549c204a3516
+FROM amancevice/superset:1.3.2
 
-# ENV PYTHONPATH "${PYTHONPATH}:/app/pythonpath"
-COPY superset_config.py /app/pythonpath/superset_config.py
+COPY superset_config.py /etc/superset/superset_config.py
 
 # Switching to root to install the required packages
 USER root

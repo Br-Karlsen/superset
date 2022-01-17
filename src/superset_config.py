@@ -23,5 +23,7 @@ from flask_appbuilder.security.manager import AUTH_OAUTH
 #     }
 # }]
 
-SECRET_KEY = os.getenv("SECRET_KEY")
+ENABLE_PROXY_FIX=True
+SECRET_KEY=os.getenv("SECRET_KEY")
 SQLALCHEMY_DATABASE_URI=os.getenv("CONNECTION_STRING")
+WTF_CSRF_ENABLED=False

@@ -45,6 +45,8 @@ superset db upgrade;
 # create admin user in db
 superset fab create-admin;
 
+# create roles and grant permissions
+superset init;
 
 ```
 

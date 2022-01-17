@@ -1,9 +1,7 @@
-FROM apache/superset
+FROM apache/superset:71e3fa1bf350045da9a1c1e89443549c204a3516
 
-ENV PYTHONPATH="/app"
-
-WORKDIR /app
-COPY superset_config.py /app/superset_config.py
+# ENV PYTHONPATH "${PYTHONPATH}:/app/pythonpath"
+COPY superset_config.py /app/pythonpath/superset_config.py
 
 # Switching to root to install the required packages
 USER root

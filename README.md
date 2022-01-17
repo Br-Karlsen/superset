@@ -24,6 +24,18 @@ gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT \
     --member="serviceAccount:superset@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com" \
     --role=roles/cloudsql.client;
 
+gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT \
+    --member="serviceAccount:superset@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com" \
+    --role=roles/bigquery.jobUser;
+
+gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT \
+    --member="serviceAccount:superset@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com" \
+    --role=roles/bigquery.user;
+
+gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT \
+    --member="serviceAccount:superset@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com" \
+    --role=roles/bigquery.dataEditor;
+
 gcloud beta secrets add-iam-policy-binding projects/$GOOGLE_CLOUD_PROJECT/secrets/superset-connection-string \
     --member serviceAccount:superset@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com \
     --role roles/secretmanager.secretAccessor;

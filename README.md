@@ -1,9 +1,28 @@
 # Apache Superset on Google Cloud Run
 This repository is designed to be opened on a machine with [Docker](https://www.docker.com/) installed. When opened in [Visual Studio Code](https://code.visualstudio.com/) with the [Remote Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension installed, Visual Studio Code can open the repository in its own container using all Python requirements specified in this repository's `requirements.txt` file.
 
+## Secrets
+Your Cloud Run service will pull two secrets from Google's Secret Manager and mount them as environment variables in the containers. Navigate to [Secret Manager](https://console.cloud.google.com/security/secret-manager) under the *IAM & Admin* menu.
+
+### Superset connection string
+* Create a new secret with the name `superset-connection-string`
+* Enter a valid connection string that Superset will use to connect to your metadata db
+* Click **Create Secret**
+
+*Cconnection string format:*
+```bash
+postgresql+psycopg2://postgres:<POSTGRES-PASSWORD>@/superset?host=/cloudsql/<INSTANCE_CONNECTION_NAME>
+```
+
+### Superset secret key
+
+* Create a new secret with the name `superset-secret-key`
+* Enter a really long string that Superset will use when encrypting things like database passwords
+* Click **Create Secret**
+
 
 ## Metadata database
-Before you deploy Superset to Cloud Run, you need to see a metadata database. The below steps assume you already have a PostgreSQL Cloud SQL instance created.
+Before you deploy Superset to Cloud Run, you need to seed a metadata database. This will be a PostgreSQL database that stores things such as your chart configurations, users, roles, and permissions. The below steps assume you already have a PostgreSQL Cloud SQL instance created.
 
 ```bash
 
@@ -14,12 +33,10 @@ gcloud services enable artifactregistry.googleapis.com;
 gcloud services enable cloudbuild.googleapis.com;
 gcloud services enable run.googleapis.com;
 
+# create service account that Cloud Run service will run under
 gcloud iam service-accounts create superset;
 
-# create secrets
-# superset-connection-string: postgresql+psycopg2://username:password@/dbname?host=/cloudsql/CLOUD-SQL-CONNECTION-NAME
-# superset-secret-key
-
+# add various IAM roles to the service account
 gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT \
     --member="serviceAccount:superset@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com" \
     --role=roles/cloudsql.client;
@@ -30,12 +47,9 @@ gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT \
 
 gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT \
     --member="serviceAccount:superset@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com" \
-    --role=roles/bigquery.user;
+    --role=roles/bigquery.dataViewer;
 
-gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT \
-    --member="serviceAccount:superset@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com" \
-    --role=roles/bigquery.dataEditor;
-
+# give service account access to the secrets
 gcloud beta secrets add-iam-policy-binding projects/$GOOGLE_CLOUD_PROJECT/secrets/superset-connection-string \
     --member serviceAccount:superset@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com \
     --role roles/secretmanager.secretAccessor;
@@ -63,6 +77,7 @@ superset init;
 ```
 
 ## Cloud Run
+The commands below will push a Docker image to a Google Artifact Registry within the Google Cloud project. A Cloud Run service will them be created to deploy that image.
 
 ```bash
 

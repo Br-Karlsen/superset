@@ -91,7 +91,6 @@ gcloud artifacts repositories create my-repository \
 gcloud builds submit \
     --tag us-central1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT/my-repository/superset src/.;
 
-
 gcloud beta run deploy superset \
     --image=us-central1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT/my-repository/superset \
     --allow-unauthenticated \

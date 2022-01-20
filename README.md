@@ -136,7 +136,7 @@ gcloud beta run deploy superset \
     --port=8088 \
     --cpu=2 \
     --memory=4096Mi \
-    --min-instances=1 \
+    --min-instances=0 \
     --max-instances=1 \
     --set-secrets=CONNECTION_STRING=superset-connection-string:1,SECRET_KEY=superset-secret-key:1,GOOGLE_ID=google-client-id:1,GOOGLE_SECRET=google-client-secret:1 \
     --set-cloudsql-instances <INSTANCE_CONNECTION_NAME> \

@@ -41,7 +41,7 @@ Your Cloud Run service will pull secrets from Google's Secret Manager and mount 
 
 *Cconnection string format:*
 ```bash
-postgresql+psycopg2://postgres:<POSTGRES-PASSWORD>@superset?host=/cloudsql/<INSTANCE_CONNECTION_NAME>
+postgresql+psycopg2://postgres:<POSTGRES-PASSWORD>@/superset?host=/cloudsql/<INSTANCE_CONNECTION_NAME>
 ```
 
 ### Superset secret key

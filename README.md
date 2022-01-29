@@ -5,7 +5,7 @@ This repository deploys Apache Superset to Google Cloud Run and configures it to
 
 This repository is designed to be opened on a machine with [Docker](https://www.docker.com/) installed. When opened in [Visual Studio Code](https://code.visualstudio.com/) with the [Remote Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension installed, Visual Studio Code can open the repository in its own container using all Python requirements specified in this repository's `requirements.txt` file.
 
-Prior to opening the repo in dev containers, copy `.env-sample` to create your own `.env` file.
+Prior to opening the repo in dev containers, copy `.env-sample` to create your own `.env` file. Update the environment variables appropriately.
 
 The deployment process below can feel a little random and disjointed at times. This is due to needing to perform steps such as an initial Cloud Run deployment to receive a service URL to then go back and finish the configuration of a previous step. Trust the process and run through in the order detailed below.
 

@@ -1,0 +1,6 @@
+Authlib
+apache-superset[bigquery]
+psycopg2-binary
+pybigquery
+cryptography==3.4.7
+WTForms==2.3.3

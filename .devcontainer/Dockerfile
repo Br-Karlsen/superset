@@ -5,7 +5,7 @@ ARG VARIANT="3.10-bullseye"
 FROM mcr.microsoft.com/vscode/devcontainers/python:0-${VARIANT}
 
 # Cloud SQL Proxy
-ARG CLOUD_SQL_PROXY_VERSION="v1.28.0"
+ARG CLOUD_SQL_PROXY_VERSION="v2.0.0"
 
 # [Choice] Node.js version: none, lts/*, 16, 14, 12, 10
 ARG NODE_VERSION="none"
@@ -21,5 +21,5 @@ COPY requirements.txt /tmp/pip-tmp/
 RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \
    && rm -rf /tmp/pip-tmp
 
-RUN wget "https://storage.googleapis.com/cloudsql-proxy/${CLOUD_SQL_PROXY_VERSION}/cloud_sql_proxy.linux.amd64" -O cloud_sql_proxy
+RUN wget "https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.0.0/cloud-sql-proxy.linux.amd64" -O cloud_sql_proxy
 RUN chmod +x cloud_sql_proxy

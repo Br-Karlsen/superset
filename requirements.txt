@@ -1,4 +1,6 @@
-apache-superset==1.3.2
-pandas-gbq
-psycopg2
+apache-superset
+apache-superset[bigquery]
+psycopg2-binary
 pybigquery
+cryptography==3.4.7
+WTForms==2.3.3

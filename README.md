@@ -51,10 +51,10 @@ superset init
 ## Azure AD OAuth setup and maintenance
 To set up roles is done in [aad](aad.portal.azure.com) -> App Registrations -> Superset -> App roles.
 
-[App role](assets/app-roles.png)
+![App role](assets/app-roles.png)
 
 To assign this role to an Azure AD Security group, go to [aad](aad.portal.azure.com) -> Enterprise Applications -> Superset -> Users and Groups.
 
-Add an Azure AD group, and then press edit assignment to selet the role you created in App roles earlier.
+Add an Azure AD group, and then press edit assignment to select the role you created in App roles earlier.
 
-To grant a user access, they need to be assigned the correct group in Azure AD and they will gain access to the correct datasets and dashboards in Superset.
+To grant a user access, they need to be assigned the correct group in Azure AD and they will gain access to the assigned datasets and dashboards in Superset.

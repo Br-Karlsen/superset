@@ -1,5 +1,4 @@
-apache-superset
-apache-superset[bigquery]
+apache-superset[bigquery]==2.0.1
 psycopg2-binary
 pybigquery
 cryptography==3.4.7

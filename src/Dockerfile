@@ -1,4 +1,4 @@
-FROM apache/superset:2.0.1
+FROM apache/superset:2.1.0rc3
 
 COPY superset_config.py /etc/superset/superset_config.py
 COPY requirements-local.txt ./docker/requirements-local.txt

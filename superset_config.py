@@ -11,6 +11,7 @@ AUTH_USER_REGISTRATION_ROLE = "Gamma"
 
 AUTH_ROLES_SYNC_AT_LOGIN = True
 
+
 # A mapping from LDAP/OAUTH group names to FAB roles
 AUTH_ROLES_MAPPING = {
     "an-brk": ["brk"],
@@ -25,7 +26,6 @@ AUTH_ROLES_MAPPING = {
 OAUTH_PROVIDERS = [
     {
         "name": "azure",
-        # "whitelist": ["@company.com"],
         "icon": "fa-windows",
         "token_key": "access_token",
         "remote_app": {

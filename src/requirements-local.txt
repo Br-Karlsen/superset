@@ -1,6 +1,6 @@
 Authlib
-apache-superset[bigquery]==2.0.1
+apache-superset==2.1.0rc3
+sqlalchemy-bigquery
 psycopg2-binary
 pybigquery
-cryptography==3.4.7
 WTForms==2.3.3

@@ -10,8 +10,10 @@ WTF_CSRF_ENABLED = True
 CSRF_ENABLED = True
 
 FEATURE_FLAGS = {
-    "DASHBOARD_NATIVE_FILTERS": True,
+    "DASHBOARD_CROSS_FILTERS": True,
+    "DRILL_TO_DETAIL": True,
 }
+
 
 AUTH_TYPE = AUTH_OAUTH
 AUTH_USER_REGISTRATION = True
@@ -33,7 +35,6 @@ AUTH_ROLES_MAPPING = {
 OAUTH_PROVIDERS = [
     {
         "name": "azure",
-        # "whitelist": ["@company.com"],
         "icon": "fa-windows",
         "token_key": "access_token",
         "remote_app": {

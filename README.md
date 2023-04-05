@@ -43,7 +43,7 @@ gcloud config set project $GOOGLE_CLOUD_PROJECT
 
 /cloud_sql_proxy $GOOGLE_CLOUD_PROJECT:europe-north1:brk-supersetdb &
 
-superset db upgrade;
+superset db upgrade
 superset init
 
 ```

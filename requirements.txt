@@ -1,4 +1,4 @@
-apache-superset==2.1.0rc3
+apache-superset==2.1.0
 sqlalchemy-bigquery
 psycopg2-binary
 pybigquery

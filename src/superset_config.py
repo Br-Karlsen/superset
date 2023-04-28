@@ -12,6 +12,9 @@ CSRF_ENABLED = True
 FEATURE_FLAGS = {
     "DASHBOARD_CROSS_FILTERS": True,
     "DRILL_TO_DETAIL": True,
+    "GENERIC_X_AXES": True,
+    "DASHBOARD_RBAC": True,
+    
 }
 
 

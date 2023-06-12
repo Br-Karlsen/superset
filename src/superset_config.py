@@ -33,6 +33,7 @@ AUTH_ROLES_MAPPING = {
     "an-flk": ["flk"],
     "an-akv-hr": ["akv-hr"],
     "an-flk-hr": ["flk-hr"],
+    "an-konsern": ["an-konsern"],
 }
 
 OAUTH_PROVIDERS = [

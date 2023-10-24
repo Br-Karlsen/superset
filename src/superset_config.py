@@ -14,6 +14,7 @@ FEATURE_FLAGS = {
     "DRILL_TO_DETAIL": True,
     "GENERIC_X_AXES": True,
     "DASHBOARD_RBAC": True,
+    "TAGGING_SYSTEM": True,
     
 }
 
@@ -34,6 +35,8 @@ AUTH_ROLES_MAPPING = {
     "an-akv-hr": ["akv-hr"],
     "an-flk-hr": ["flk-hr"],
     "an-konsern": ["konsern-hr"],
+    "an-stingray": ["stingray"],
+    "an-salaks": ["salaks"],
 }
 
 OAUTH_PROVIDERS = [

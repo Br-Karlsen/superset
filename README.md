@@ -14,6 +14,8 @@ When making changes to the files in src/, this needs to be deployed to Cloud Run
 ```bash
 gcloud auth  login
 
+export GOOGLE_CLOUD_PROJECT=brk-analytics
+
 gcloud builds submit \
     --tag europe-north1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT/my-repository/superset src/.;
 

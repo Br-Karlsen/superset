@@ -1,5 +1,7 @@
-apache-superset[bigquery]==2.0.1
+apache-superset[bigquery]==3.0.0
 psycopg2-binary
 pybigquery
-cryptography==3.4.7
-WTForms==2.3.3
+cryptography
+WTForms
+Authlib
+sqlparse==0.4.3

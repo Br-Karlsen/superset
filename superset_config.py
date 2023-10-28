@@ -11,6 +11,13 @@ AUTH_USER_REGISTRATION_ROLE = "Gamma"
 
 AUTH_ROLES_SYNC_AT_LOGIN = True
 
+FEATURE_FLAGS = {
+    "DASHBOARD_CROSS_FILTERS": True,
+    "DRILL_TO_DETAIL": True,
+    "GENERIC_X_AXES": True,
+    "DASHBOARD_RBAC": True,
+    "TAGGING_SYSTEM": True,
+}
 
 # A mapping from LDAP/OAUTH group names to FAB roles
 AUTH_ROLES_MAPPING = {
@@ -21,11 +28,14 @@ AUTH_ROLES_MAPPING = {
     "an-flk": ["flk"],
     "an-akv-hr": ["akv-hr"],
     "an-flk-hr": ["flk-hr"],
+    "an-konsern": ["konsern-hr"],
+    "an-stingray": ["stingray"],
+    "an-salaks": ["salaks"],
 }
-
 OAUTH_PROVIDERS = [
     {
         "name": "azure",
+        # "whitelist": ["@company.com"],
         "icon": "fa-windows",
         "token_key": "access_token",
         "remote_app": {

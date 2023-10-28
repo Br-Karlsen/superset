@@ -14,6 +14,8 @@ When making changes to the files in src/, this needs to be deployed to Cloud Run
 ```bash
 gcloud auth  login
 
+export GOOGLE_CLOUD_PROJECT=brk-analytics
+
 gcloud builds submit \
     --tag europe-north1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT/my-repository/superset src/.;
 
@@ -25,10 +27,12 @@ gcloud beta run deploy superset \
     --memory=4096Mi \
     --min-instances=0 \
     --max-instances=1 \
-	--set-secrets=CONNECTION_STRING=superset-connection-string:3,SECRET_KEY=superset-secret-key:1,AZURE_ID=AZURE_ID:1,AZURE_SECRET=CLIENT_SECRET:1,TENANT_ID=TENANT_ID:1 \
+    --set-secrets=CONNECTION_STRING=superset-connection-string:3,SECRET_KEY=superset-secret-key:1,AZURE_ID=AZURE_ID:1,AZURE_SECRET=CLIENT_SECRET:1,TENANT_ID=TENANT_ID:1 \
     --set-cloudsql-instances brk-supersetdb \
     --platform=managed \
     --service-account superset@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com \
+    --vpc-egress=private-ranges-only \
+    --vpc-connector=superset-connector \
     --region=europe-north1;
 
 ```

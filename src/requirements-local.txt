@@ -1,15 +1,6 @@
-Authlib
-<<<<<<< HEAD
 apache-superset[bigquery]==3.0.0
 psycopg2-binary
 pybigquery
 cryptography
 WTForms
 sqlparse==0.4.3
-=======
-apache-superset==2.1.0
-sqlalchemy-bigquery
-psycopg2-binary
-pybigquery
-WTForms==2.3.3
->>>>>>> b62226bcad07281687f733929204daae6a162dcd

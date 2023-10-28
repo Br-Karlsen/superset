@@ -9,18 +9,13 @@ SQLALCHEMY_DATABASE_URI = os.getenv("CONNECTION_STRING")
 WTF_CSRF_ENABLED = True
 CSRF_ENABLED = True
 
-<<<<<<< HEAD
-FEATURE_FLAGS = {}
-=======
 FEATURE_FLAGS = {
     "DASHBOARD_CROSS_FILTERS": True,
     "DRILL_TO_DETAIL": True,
     "GENERIC_X_AXES": True,
     "DASHBOARD_RBAC": True,
-    
+    "TAGGING_SYSTEM": True,
 }
->>>>>>> b62226bcad07281687f733929204daae6a162dcd
-
 
 AUTH_TYPE = AUTH_OAUTH
 AUTH_USER_REGISTRATION = True
@@ -37,6 +32,9 @@ AUTH_ROLES_MAPPING = {
     "an-flk": ["flk"],
     "an-akv-hr": ["akv-hr"],
     "an-flk-hr": ["flk-hr"],
+    "an-konsern": ["konsern-hr"],
+    "an-stingray": ["stingray"],
+    "an-salaks": ["salaks"],
 }
 
 OAUTH_PROVIDERS = [

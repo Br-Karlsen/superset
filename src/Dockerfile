@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 FROM apache/superset:3.0.0
+=======
+FROM apache/superset:2.1.0
+>>>>>>> b62226bcad07281687f733929204daae6a162dcd
 
 COPY superset_config.py /etc/superset/superset_config.py
 COPY requirements-local.txt ./docker/requirements-local.txt

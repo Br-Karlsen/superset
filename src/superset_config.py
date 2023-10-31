@@ -17,6 +17,38 @@ FEATURE_FLAGS = {
     "TAGGING_SYSTEM": True,
 }
 
+FILTER_STATE_CACHE_CONFIG = {
+    'CACHE_TYPE': 'RedisCache',
+    'CACHE_DEFAULT_TIMEOUT': 86400,
+    'CACHE_KEY_PREFIX': 'superset_filter',
+    'CACHE_REDIS_URL': os.getenv("superset-redis-connstr"),
+    'CACHE_REDIS_PASSWORD': os.getenv("superset-redis-pwd"),
+}
+
+EXPLORE_FORM_DATA_CACHE_CONFIG = {
+    'CACHE_TYPE': 'RedisCache',
+    'CACHE_DEFAULT_TIMEOUT': 86400,
+    'CACHE_KEY_PREFIX': 'superset_explore',
+    'CACHE_REDIS_URL': os.getenv("superset-redis-connstr"),
+    'CACHE_REDIS_PASSWORD': os.getenv("superset-redis-pwd"),
+}
+DATA_CACHE_CONFIG = {
+    'CACHE_TYPE': 'RedisCache',
+    'CACHE_DEFAULT_TIMEOUT': 86400,
+    'CACHE_KEY_PREFIX': 'superset_data',
+    'CACHE_REDIS_URL': os.getenv("superset-redis-connstr"),
+    'CACHE_REDIS_PASSWORD': os.getenv("superset-redis-pwd"),
+}
+
+CACHE_CONFIG = {
+    'CACHE_TYPE': 'RedisCache',
+    'CACHE_DEFAULT_TIMEOUT': 86400,
+    'CACHE_KEY_PREFIX': 'superset_meta',
+    'CACHE_REDIS_URL': os.getenv("superset-redis-connstr"),
+    'CACHE_REDIS_PASSWORD': os.getenv("superset-redis-pwd"),
+}
+
+
 AUTH_TYPE = AUTH_OAUTH
 AUTH_USER_REGISTRATION = True
 AUTH_USER_REGISTRATION_ROLE = "Gamma"

@@ -24,10 +24,10 @@ gcloud beta run deploy superset \
     --allow-unauthenticated \
     --port=8088 \
     --cpu=2 \
-    --memory=4096Mi \
+    --memory=1024Mi \
     --min-instances=0 \
-    --max-instances=1 \
-    --set-secrets=CONNECTION_STRING=superset-connection-string:3,SECRET_KEY=superset-secret-key:1,AZURE_ID=AZURE_ID:1,AZURE_SECRET=CLIENT_SECRET:1,TENANT_ID=TENANT_ID:1 \
+    --max-instances=6 \
+    --set-secrets=CONNECTION_STRING=superset-connection-string:3,SECRET_KEY=superset-secret-key:1,AZURE_ID=AZURE_ID:1,AZURE_SECRET=CLIENT_SECRET:1,TENANT_ID=TENANT_ID:1,SUPERSET_REDIS_CONNSTR=superset-redis-connstr:latest,SUPERSET_REDIS_PWD=superset-redis-pwd:1 \
     --set-cloudsql-instances brk-supersetdb \
     --platform=managed \
     --service-account superset@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com \

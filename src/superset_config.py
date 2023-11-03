@@ -21,31 +21,31 @@ FILTER_STATE_CACHE_CONFIG = {
     'CACHE_TYPE': 'RedisCache',
     'CACHE_DEFAULT_TIMEOUT': 86400,
     'CACHE_KEY_PREFIX': 'superset_filter',
-    'CACHE_REDIS_URL': os.getenv("superset-redis-connstr"),
-    'CACHE_REDIS_PASSWORD': os.getenv("superset-redis-pwd"),
+    'CACHE_REDIS_URL': os.getenv("SUPERSET_REDIS_CONNSTR"),
+    'CACHE_REDIS_PASSWORD': os.getenv("SUPERSET_REDIS_PWD"),
 }
 
 EXPLORE_FORM_DATA_CACHE_CONFIG = {
     'CACHE_TYPE': 'RedisCache',
     'CACHE_DEFAULT_TIMEOUT': 86400,
     'CACHE_KEY_PREFIX': 'superset_explore',
-    'CACHE_REDIS_URL': os.getenv("superset-redis-connstr"),
-    'CACHE_REDIS_PASSWORD': os.getenv("superset-redis-pwd"),
+    'CACHE_REDIS_URL': os.getenv("SUPERSET_REDIS_CONNSTR"),
+    'CACHE_REDIS_PASSWORD': os.getenv("SUPERSET_REDIS_PWD"),
 }
 DATA_CACHE_CONFIG = {
     'CACHE_TYPE': 'RedisCache',
     'CACHE_DEFAULT_TIMEOUT': 86400,
     'CACHE_KEY_PREFIX': 'superset_data',
-    'CACHE_REDIS_URL': os.getenv("superset-redis-connstr"),
-    'CACHE_REDIS_PASSWORD': os.getenv("superset-redis-pwd"),
+    'CACHE_REDIS_URL': os.getenv("SUPERSET_REDIS_CONNSTR"),
+    'CACHE_REDIS_PASSWORD': os.getenv("SUPERSET_REDIS_PWD"),
 }
 
 CACHE_CONFIG = {
     'CACHE_TYPE': 'RedisCache',
     'CACHE_DEFAULT_TIMEOUT': 86400,
     'CACHE_KEY_PREFIX': 'superset_meta',
-    'CACHE_REDIS_URL': os.getenv("superset-redis-connstr"),
-    'CACHE_REDIS_PASSWORD': os.getenv("superset-redis-pwd"),
+    'CACHE_REDIS_URL': os.getenv("SUPERSET_REDIS_CONNSTR"),
+    'CACHE_REDIS_PASSWORD': os.getenv("SUPERSET_REDIS_PWD"),
 }
 
 

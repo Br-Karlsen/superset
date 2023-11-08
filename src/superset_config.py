@@ -55,6 +55,9 @@ AUTH_USER_REGISTRATION_ROLE = "Gamma"
 
 AUTH_ROLES_SYNC_AT_LOGIN = True
 
+#Allow API to accept local db users
+AUTH_API_LOGIN_ALLOW_MULTIPLE_PROVIDERS = True
+
 # A mapping from LDAP/OAUTH group names to FAB roles
 AUTH_ROLES_MAPPING = {
     "an-brk": ["brk"],

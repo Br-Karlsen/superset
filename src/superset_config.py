@@ -71,6 +71,7 @@ AUTH_ROLES_MAPPING = {
     "an-konsern": ["konsern-hr"],
     "an-stingray": ["stingray"],
     "an-salaks": ["salaks"],
+    "an-brk-fin": ["brk-fin"]
 }
 
 OAUTH_PROVIDERS = [

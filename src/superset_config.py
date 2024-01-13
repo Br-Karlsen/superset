@@ -10,6 +10,13 @@ WTF_CSRF_ENABLED = False
 CSRF_ENABLED = True
 TALISMAN_ENABLED = False
 
+## App icon
+APP_NAME = "Br Karlsen Superset"
+## APP_ICON = "https://storage.googleapis.com/databeat_website/airbyte-uploads/BrK-logo-Black.png"
+APP_ICON_WIDTH = 200
+## FAVICONS = [{"href": "https://yourdomain.com/favicon.png"}]
+
+
 FEATURE_FLAGS = {
     "DASHBOARD_CROSS_FILTERS": True,
     "DRILL_TO_DETAIL": True,
@@ -71,7 +78,7 @@ AUTH_ROLES_MAPPING = {
     "an-konsern": ["konsern-hr"],
     "an-stingray": ["stingray"],
     "an-salaks": ["salaks"],
-    "an-brk-fin": ["brk-fin"]
+    "an-brk-fin": ["brk-fin"],
 }
 
 OAUTH_PROVIDERS = [

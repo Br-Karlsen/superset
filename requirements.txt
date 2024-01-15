@@ -6,3 +6,5 @@ WTForms
 Authlib
 sqlparse==0.4.3
 redis-py
+google-cloud-bigquery
+google-cloud-bigquery-storage

@@ -79,6 +79,7 @@ AUTH_ROLES_MAPPING = {
     "an-stingray": ["stingray"],
     "an-salaks": ["salaks"],
     "an-brk-fin": ["brk-fin"],
+    "an-mowi": ["mowi"],
 }
 
 OAUTH_PROVIDERS = [
